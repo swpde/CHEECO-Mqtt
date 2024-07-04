@@ -60,6 +60,7 @@ namespace MQTTClient
             this.tsmShowWin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,7 +151,6 @@ namespace MQTTClient
             this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 13;
             this.label1.Text = "Ver:20240430";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -162,7 +162,7 @@ namespace MQTTClient
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 73);
             this.panel1.TabIndex = 24;
@@ -173,7 +173,7 @@ namespace MQTTClient
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 29);
             this.textBox1.TabIndex = 24;
-            this.textBox1.Text = "mqtt240502_G.2.1";
+            this.textBox1.Text = "mqtt240502_G.2.3";
             // 
             // panel2
             // 
@@ -352,6 +352,17 @@ namespace MQTTClient
             this.tsStop.Text = "退出系统";
             this.tsStop.Click += new System.EventHandler(this.tsStop_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1053, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "test0";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -359,6 +370,7 @@ namespace MQTTClient
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1182, 779);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel3);
@@ -426,6 +438,7 @@ namespace MQTTClient
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label CpuVale;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

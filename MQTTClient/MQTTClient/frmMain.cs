@@ -42,7 +42,7 @@ namespace MQTTClient
         private string Filters = "*.json";
         private string CommandPath = "c:\\SendData\\CMD";
         private string CommandTopic = "Commands";
-        public static int batchSize = 5;
+        public static int batchSize = 10;
         //  private string EMQX_CLIENT_ID;
 
         // public List<MqttClient> MqttClientList = new List<MqttClient>;
@@ -807,7 +807,7 @@ namespace MQTTClient
                 CpuVale.Invoke((MethodInvoker)delegate { CpuVale.Text = cpuUsage.ToString(); });
                 float average_cpuUsage = (cpuUsage + prev_cpuUsage) / 2;
                 log.Error($"Process CPU Usage: {average_cpuUsage}%");
-                if(average_cpuUsage >= 5)
+                if(average_cpuUsage >= 10)
                 {
                     log.Error("系统重启");
                     SoftwareRestart();
@@ -824,16 +824,16 @@ namespace MQTTClient
         public static void SoftwareRestart()
         {
             // 获取当前执行程序的路径
-            //string currentPath = Process.GetCurrentProcess().MainModule.FileName;
-            //// 启动新的进程
-            //Process.Start(currentPath);
-            //// 退出当前进程
-            //Environment.Exit(0);
+            string currentPath = Process.GetCurrentProcess().MainModule.FileName;
+            // 启动新的进程
+            Process.Start(currentPath);
+            // 退出当前进程
+            Environment.Exit(0);
 
-            Application.ExitThread();
-            Application.Exit();
-            Application.Restart();
-            Process.GetCurrentProcess().Kill();
+            //Application.ExitThread();
+            //Application.Exit();
+            //Application.Restart();
+            //Process.GetCurrentProcess().Kill();
 
         }
 
@@ -864,9 +864,13 @@ namespace MQTTClient
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SoftwareRestart();
 
+        }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
